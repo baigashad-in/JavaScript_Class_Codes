@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="p1"> Techpile Technologies </p>
+    <button onclick = "demo13()">Set Style</button>
+    <script>
+        function demo13() 
+        {
+            var x = confirm("Do you want to set style on paragraph ?")   
+            var p = document.getElementById("p1") 
+            if (x==true) 
+            {
+                p.style.background = "coral"
+                p.style.color = "white"
+                p.style.borderRadius = "10px"
+                p.style.padding="40px"
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
