@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"> Techpile <b><i>Technologies</i> pvt.</b>  ltd </p>
+    <p id = "p2"> Rahul </p>
+    <button onclick="demo18()">Click Me</button>
+    <script>
+        function demo18() 
+        {
+            var p2 = document.querySelector("#p2")    
+            var p1 = document.querySelector("#p1")    
+            // p2.innerText = "Code Helper powered by Techpile"
+            // p2.innerText = "Code Helper <b> powered </b> by Techpile"
+            // p2.innerHTML = "Code Helper <b> powered </b> by Techpile"
+            // p2.outerHTML = "<h1>Code Helper <b> powered </b> by Techpile</h1>"
+            // p2.innerText = p1.innerText
+            // p2.innerText = p1.innerHTML
+            // p2.innerHTML = p1.innerHTML
+            p2.innerHTML = p1.outerHTML
+            
+        }
+    </script>
+
+    
+</body>
+</html>
