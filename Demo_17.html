@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Techpile <b><i>Technologies</i> pvt.</b>  ltd </p>
+    <button onclick="demo17()">Get Text</button>
+    <script>
+        function demo17() 
+        {
+           var p1 = document.querySelector("p")
+        //    alert(p1)
+        //    alert(p1.innerText)
+        //    alert(p1.innerHTML)
+        //    alert(p1.outerHTML)
+        document.write(p1.innerText) //O/P = Techpile Technologies pvt. ltd
+        document.write(p1.innerHTML) //O/P = Techpile <b><i>Technologies</i> pvt.</b>  ltd
+        document.write(p1.outerHTML) //O/P = <p> Techpile <b><i>Technologies</i> pvt.</b>  ltd </p>
+        }
+    </script>
+</body>
+</html>
