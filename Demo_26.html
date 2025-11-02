@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Swapping of Text using setTimeout function</title>
+</head>
+<body>
+    <h1 id="heading_1">T.V.</h1>
+    <h1 id="heading_2">Fridge</h1>
+    <h1 id="heading_3">Scooter</h1>
+    
+    <script>
+        function demo25() 
+        {
+            var a = document.querySelector("#heading_1")
+            var b = document.querySelector("#heading_2")
+            var c = document.querySelector("#heading_3")
+            var x = a.innerText
+            var y = b.innerText
+            var z = c.innerText
+            a.innerText = y
+            b.innerText = z    
+            c.innerText = x
+            setTimeout(demo25, 2000)
+        }
+        demo25()
+    </script>
+</body>
+</html>
