@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="Images/Desert_morning.png" height="300px"> <br><br>
+    <button onclick="demo22()">Get Source</button>
+    <button onclick="demo22_1()">Set Source</button>
+    <script>
+        function demo22() 
+        {
+            var x = document.querySelector("img").src
+            alert(x)
+        }
+        function demo22_1() 
+        {
+            document.querySelector("img").src = "Images/food.jpg" // to change the image in img css selector
+        }
+    </script>
+</body>
+</html>
