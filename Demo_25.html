@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using setTimeout() as setInterval() to call a function multiple times</title>
+</head>
+<body>
+    <script>
+        // function demo25() 
+        // {
+        //     alert("okay")    
+        // }
+        // // setInterval(demo25, 5000)
+        // setTimeout(demo25,5000)
+
+        // Calling function multiple times using setTimeout() function.
+        function demo25() 
+        {
+            alert("okay")    
+            setTimeout(demo25,5000)
+        }
+        demo25()
+    </script>
+</body>
+</html>
