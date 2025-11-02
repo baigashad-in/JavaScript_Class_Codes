@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter First No:</p>
+    <input id="n1" type="number">
+    <p>Enter Second No:</p>
+    <input id="n2" type="number"><br><br>
+    <button onclick="add()"> + </button>
+    <button onclick="difference()"> - </button>
+    <button onclick="multiply()"> x </button>
+    <button onclick="division()"> / </button><br><br>
+    <input id="result" type="text">
+    <script>
+        function add()
+        {
+            var num1=parseFloat(document.getElementById("n1").value)
+            var num2=parseFloat(document.getElementById("n2").value)
+            document.getElementById("result").value=`Result is:  ${(num1+num2)}`
+        }
+        function difference()
+        {
+            var num1=parseFloat(document.getElementById("n1").value)
+            var num2=parseFloat(document.getElementById("n2").value)
+            document.getElementById("result").value=`Result is:  ${(num1-num2)}`
+        }
+        function multiply()
+        {
+            var num1=parseFloat(document.getElementById("n1").value)
+            var num2=parseFloat(document.getElementById("n2").value)
+            document.getElementById("result").value=`Result is:  ${(num1*num2)}`
+        }
+        function division()
+        {
+            var num1=parseFloat(document.getElementById("n1").value)
+            var num2=parseFloat(document.getElementById("n2").value)
+            document.getElementById("result").value=`Result is:  ${(num1/num2)}`
+        }
+    </script>
+</body>
+</html>
