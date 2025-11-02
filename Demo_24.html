@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="Images/high_building.jpg" height="300px" id="im1"> 
+    <img src="Images/Snow_mountain.png" height="300px" id="im2"> <br><br>
+    <button onclick="demo24()">Swap Images</button>
+
+    <script>
+        function demo24() 
+        {
+            // var x = document.querySelector("#im1").src
+            // var y = document.querySelector("#im2").src
+            // // var y = document.getElementById("im2").src
+            // var z = x
+            // x = y
+            // y = z
+            // document.querySelector("#im1").src = x //setting src of #im1 image to object name stored in x variable
+            // document.querySelector("#im2").src = y //setting src of #im2 image to object name stored in y variable
+
+            var x = document.querySelector("#im1")
+            var y = document.querySelector("#im2")
+            // var y = document.getElementById("im2").src
+            var z = x.src
+            var p = y.src
+            x.src = p
+            y.src = z
+
+        }
+
+        // setInterval("demo24()", 2000)
+        setInterval(demo24, 1000)
+    </script>
+</body>
+</html>
