@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Select Course</span> <br>
+    <select name="" id="x">
+        <option> Summer Training </option>
+        <option> Apprenticeship </option>
+        <option> Industrial Training </option>
+        <option> Winter Training </option>
+    </select>
+    <br><br>
+    <span>Amount to pay : </span> <br>
+    <input type="text" id="t1">
+    <br><br>
+    <button onclick="demo20()">Submit</button>
+    <script>
+        var a = document.getElementById("x")
+        var t = document.getElementById("t1")
+        function demo20() 
+        {
+            if (a.value == "Summer Training") 
+            {
+                t1.value = "5500"
+            }
+            else if (a.value == "Apprenticeship") 
+            {
+                t1.value = "30000"
+            }
+            else if (a.value == "Industrial Training") 
+            {
+                t1.value = "6500"
+            }
+            else if (a.value == "Winter Training") 
+            {
+                t1.value = "500"
+            }
+        }
+
+    </script>
+</body>
+</html>
