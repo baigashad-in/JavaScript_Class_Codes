@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show and Hide password by changing type of input text tag/element</title>
+</head>
+<body>
+    <input type="password" id="txt1">
+    <input type="button" value = "SHOW" onclick="demo28()" id="btn1" >
+
+    <script>
+        function demo28()
+        {
+            var t = document.querySelector("#txt1")
+            var btn = document.querySelector("#btn1")
+            if(t.value.length !=0)
+            {
+                if (btn.value == "SHOW") 
+                {
+                    btn.value = "HIDE"
+                    t.type = "text"
+                    btn.style.background = "Seagreen"
+                    t.style.border = "4px solid Seagreen"
+                }
+                else
+                {
+                    btn.value = "SHOW"
+                    t.type = "password"
+                    btn.style.background = "coral"
+                    t.style.border = "4px solid coral"
+                }
+            }
+            else
+            {
+                alert("Kindly Enter a password in text box.")
+            }
+        }
+    </script>
+
+</body>
+</html>
