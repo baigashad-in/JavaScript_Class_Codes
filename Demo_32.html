@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing output of an array in Drop-down list in HTML page</title>
+</head>
+<body>
+    <p></p>
+    <button onclick="demo32()">Click Me</button>
+    <script>
+        function demo32() 
+        {
+            var p = document.querySelector("p")
+            var arr = [ "New York", "London", "Tokyo", "Paris", "Sydney", "Mumbai", "Beijing", "Toronto", "Dubai", "New Delhi" ]    
+            var res = "<select>"
+            for(var i=0; i<arr.length; i++)
+            {
+                res = res + "<option>" + arr[i] + "</option>"
+            }
+            res = res + "</select>"
+            p.innerHTML = res // this is exports value of res into <p> tag and <p> tag  prints as usually in HTML document. This is called binding to <p> tag. Other tags instead of <p> tag can also be used.
+    
+
+        }
+    </script>
+</body>
+</html>
