@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <select onchange="demo41()"></select> <!-- onchange -->
+    <script>
+        var inpt = parseInt(prompt("Enter the length of array : "))
+        var arr = []
+        var res = "" 
+        for(var i = 0; i<inpt; i++)
+        {
+            var data = prompt("Enter your data to add in array : ")
+            arr[i] = data
+            res = res + "<option>"+arr[i]+"</option>"
+        }
+        document.querySelector("select").innerHTML = res
+
+        function demo41() 
+        {
+            var slct = document.querySelector("select")
+            alert(slct.value)
+            // document.querySelector("#p1").innerHTML=  slct.value
+        }
+
+    </script>
+</body>
+</html>
