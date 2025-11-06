@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For-in loop in JS</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        var list = document.querySelector("ul")
+        var arr = ["HTML", "CSS", "JS", "jQuery"]
+        var res = ""
+        for(var i in arr)
+        {
+            res = res + "<li>" + arr[i] + "</li>"
+        }
+        list.innerHTML = res
+    </script>
+</body>
+</html>
