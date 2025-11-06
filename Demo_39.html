@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        var inpt = parseInt(prompt("Enter the length of array : "))
+        var arr = []
+        var res = ""
+        for(var i = 0; i<inpt; i++)
+        {
+            var data = prompt("Enter your data to add in array : ")
+            arr[i] = data
+            res = res + "<li>"+arr[i]+"</li>"
+        }
+        // alert(arr)
+        document.querySelector("ul").innerHTML = res
+
+    </script>
+</body>
+</html>
