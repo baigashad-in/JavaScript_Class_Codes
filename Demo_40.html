@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For-in loop in JS</title>
+</head>
+<body>
+    <input type="text" value="">
+    <button onclick="demo40()">Click Me</button>
+    <ul></ul>
+    <select></select>
+    <ol></ol>
+
+    <script>
+        var arr = ["HTML", "CSS", "JS", "jQuery", "Angular", "React"]
+        var res = ""
+
+        function demo40() 
+        {
+            var inpt = document.querySelector("input").value
+            for(var i in arr)
+            {
+                if(inpt == "ul")
+                {
+                    var list = document.querySelector("ul")
+                    res = res + "<li>" + arr[i] + "</li>"
+                }
+                else if (inpt == "dropdown") 
+                {
+                    var list = document.querySelector("select")
+                    res = res + "<option>" + arr[i] + "</option>"
+                }
+                 else if (inpt == "ol") 
+                {
+                    var list = document.querySelector("ol")
+                    res = res + "<li>" + arr[i] + "</li>"
+                }
+            }
+            list.innerHTML = res           
+        }
+
+    </script>
+</body>
+</html>
