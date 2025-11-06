@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic sliding images when images are stored in array</title>
+    <style>
+        img
+        {
+            height: 400px;
+            width: 700px;
+            padding: 25px;
+            box-shadow: 0px 0px 15px 2px black inset;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>Slider</h1>
+    <hr>
+    <img src="Images/Mountains.png">
+    </center>
+
+    <script>
+        var arr = ["Images/Mountains.png","Images/tuscuny.png", "Images/coding3.jpg", "Images/high_building.jpg", "Images/star_mountains.png"]
+        var i=0
+        function demo36()
+        {
+            var im=document.querySelector("img")
+            im.src = arr[i]
+            i++;
+            if(i==arr.length)
+            {
+                i=0
+            }
+            // setTimeout(demo36,2000)
+        }
+        // demo36()
+        setInterval(demo36, 2000)
+    </script>
+    
+    
+</body>
+</html>
