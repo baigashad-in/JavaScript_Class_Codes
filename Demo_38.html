@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing output of an array in Drop-down list and printing it inside p tag in HTML page</title>
+</head>
+<body>
+    <p></p>
+    <button onclick="demo38()">Click Me</button>
+    <p id="p1"></p>
+    <script>
+        function demo38() 
+        {
+            var p = document.querySelector("p")
+            var arr = [ "New York", "London", "Tokyo", "Paris", "Sydney", "Mumbai", "Beijing", "Toronto", "Dubai", "New Delhi" ]    
+            var color = ["coral", "lightblue", "salmon", "slategrey", " lightyellow", "coral", "lightblue", "lightyellow", "slategrey", "salmon"]
+            var res = "<select onchange = 'demo38_1()'>" // onchange
+            for(var i=0; i<arr.length; i++)
+            {
+                res = res + "<option style = 'background: "+ color[i] +"'>" + arr[i] + "</option>"
+            }
+            res = res + "</select>"
+            p.innerHTML = res // this is exports value of res into <p> tag and <p> tag  prints as usually in HTML document. This is called binding to <p> tag. Other tags instead of <p> tag can also be used.
+        }
+        function demo38_1() 
+        {
+            var ddl = document.querySelector("select")
+            document.querySelector("#p1").innerHTML = ddl.value
+            // document.querySelector("#p1").innerHTML += ddl.value + " " // to get all previous values in output
+        }
+    </script>
+</body>
+</html>
