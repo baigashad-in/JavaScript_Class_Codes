@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onfocus and onblur events</title>
+</head>
+<body>
+    Onfocus : <input id="t1" type="text" onfocus="demo42()"> <br> <br>
+    Onblur : <input id="t2" type="text" onblur="demo42()">
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+        function demo42() 
+        {
+            // alert("okay")
+            var t1 = document.querySelector("#t1")
+            var t2 = document.querySelector("#t2")
+            var p1 = document.querySelector("#p1")
+            var p2 = document.querySelector("#p2")
+            p1.innerHTML = "Value of first text box : " + t1.value
+            p2.innerHTML = "Value of second text box : " + t2.value
+
+        }
+    </script>
+    
+</body>
+</html>
