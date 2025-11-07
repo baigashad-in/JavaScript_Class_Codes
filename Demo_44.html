@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeypress and onkeyup events in JS</title>
+</head>
+<body>
+    Onkeypress <br> <input type="text" onkeypress="demo44()" id="t1"> <br><br>
+    Onkeyup <br> <input type="text" onkeyup="demo44()" id="t2"> <br><br>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+        function demo44() 
+        {
+            var t1=document.querySelector("#t1")    
+            var t2=document.querySelector("#t2")    
+            var p1=document.querySelector("#p1")    
+            var p2=document.querySelector("#p2")    
+            p1.innerHTML = "Value of first textbox : " + t1.value 
+            p2.innerHTML = "Value of second textbox : " + t2.value
+        }
+    </script>
+    
+</body>
+</html>
