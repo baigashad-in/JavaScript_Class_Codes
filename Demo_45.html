@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking valid length of pincode using onkeyup event</title>
+    
+</head>
+<body>
+    Pincode <br>
+    <input type="number" id="t1" onkeyup="demo45()"> <br> <br>
+    <!-- <input type="number" id="t1" onkeypress ="demo45()"> <br> <br> -->
+    <span></span>
+    
+    <script>
+        function demo45() 
+        {
+         var t = document.querySelector("input")
+         var sp = document.querySelector("span")
+         
+        if(t.value.length != 0)
+        {   
+            if (t.value.length == 6) // when using onkeypress, length == 5
+            {
+                sp.innerText = "Valid pincode"
+                sp.style.color = "seagreen"
+                t.style.border = "4px solid seagreen"
+            }
+            else
+            {
+                sp.innerText = "Invalid pincode. Kindly input a 6 digit pincode"
+                sp.style.color = "crimson"
+                t.style.border = "4px solid crimson"
+            }
+        }
+        else
+        {
+            alert("Kindly enter a value in text box")
+        }
+        }
+    </script>
+</body>
+</html>
