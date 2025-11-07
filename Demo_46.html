@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Enquiry Form using JS and HTML</title>
+    
+    <style>
+        #btn1
+        {
+            position: fixed;
+            top: 0px;
+            left: 50px;
+            background-color: lightskyblue;
+            height: 50px;
+            width: 100px;
+            border: 4px solid slategray;
+            color: gray;
+            font-weight: bold;
+            font-size: 22px;
+            border-radius: 5px;
+        }
+        #f1
+        {
+            margin: 100px auto;
+            height: 700px;
+            width: 300px;
+        }
+        div
+        {
+            width: 100%;
+            /* background-color: aqua; */
+        }
+        textarea
+        {
+            resize: none;
+        }
+        #f1 input
+        {
+            width: 95%;
+            height: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="button" id="btn1" value="Show" onclick="demo46()">
+
+    <div>
+        <form id="f1">
+            <fieldset>
+                <h2> Enquiry Form </h2>
+                Name: <br>
+                <input type="text" > <br><br>
+                Phone number : <br>
+                <input type="number"> <br><br>
+                Email : <br>
+                <input type="email"> <br><br>
+                Your enquiry : <br>
+                <textarea rows="4" cols="33"></textarea> <br><br>
+                <button>Submit</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+            var y = document.querySelector("#f1")
+                y.style.display = "none"
+
+        function demo46() 
+        {
+            var x = document.querySelector("#btn1")
+            if (x.value == "Show") 
+            {
+                x.value = "Hide"
+                y.style.display = "block"
+            }
+            else
+            {
+                x.value = "Show"
+                y.style.display = "none"
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
