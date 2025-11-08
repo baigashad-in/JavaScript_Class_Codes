@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Login form and Registration form using JS and HTML</title>
+    
+    <style>        
+        div
+        {
+            width: 40%;
+            margin: 100px auto;
+        }
+        textarea
+        {
+            resize: none;
+        }
+        #f1 input, #f2 input
+        {
+            width: 95%;
+            height: 20px;
+        }
+        #f1, #f2
+        {
+            box-shadow: 0px 0px 10px 10px lightgrey ;
+            border-radius: 10px;
+            border: 6px solid slategray;
+            background-color: crimson;
+        }
+        #btn1, #btn2
+        {
+            height: 50px;
+            width: 100px;
+            font-size: 18px;
+            background-color: gold;
+            box-shadow: 1px 1px 5px 1px gray;
+            border-radius: 15%;
+            border: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="button" id="btn1" value="Login" onclick="demo46_1()">
+    <input type="button" id="btn2" value="Register" onclick="demo46_2()">
+    <br><br>
+
+    <div>
+        <form id="f1">
+            <fieldset>
+                <h2> Login Form </h2>
+                UserId: <br>
+                <input type="text" > <br><br>
+                Password : <br>
+                <input type="password"> <br><br>
+                <button>Submit</button>
+            </fieldset>
+        </form>
+
+        <form id="f2">
+            <fieldset>
+                <h2> Registration Form </h2>
+                Name: <br>
+                <input type="text" > <br><br>
+                Phone number : <br>
+                <input type="number"> <br><br>
+                Email : <br>
+                <input type="email"> <br><br>
+                Password : <br>
+                <input type="password"> <br><br>
+                <button>Submit</button>
+            </fieldset>
+        </form> <br><br>
+
+    </div>
+
+    <script>
+            var x = document.querySelector("#f1")
+            var y = document.querySelector("#f2")
+            y.style.display = "block"
+            x.style.display = "none"
+                
+        function demo46_1() 
+        {
+            x.style.display = "block"
+            y.style.display = "none"
+        }
+        function demo46_2() 
+        {
+            y.style.display = "block"
+            x.style.display = "none"
+        }
+    </script>
+    
+</body>
+</html>
