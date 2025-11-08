@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Login form and Registration form using JS and Bootstrap</title>
+
+    <link rel="stylesheet" href="Bootstrap_files/CSS/bootstrap.css">
+    <style>
+        #login
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 mx-auto p-5 shadow-lg">
+                <div class="btn-group">
+                    <button class="btn btn-outline-info" onclick="demo49_1()">Register</button>
+                    <button class="btn btn-outline-info" onclick="demo49_2()">Login</button>
+                </div>
+
+                <div id="reg">
+                    <br><br>
+                    <p class="text-center fs-3">Register Now</p>
+                    Name <input type="text" class="form-control mb-2">
+                    Email <input type="email" class="form-control mb-2">
+                    Mobile <input type="number" class="form-control mb-2">
+                    Password <input type="password" class="form-control mb-2">
+                    Confirm password <input type="password" class="form-control mb-2">
+                    <button class="btn btn-outline-info">SAVE</button>
+                </div>
+
+                <div id="login">
+                    <br><br>
+                    <p class="text-center fs-3">Login</p>
+                    Email <input type="text" class="form-control mb-2">
+                    Password <input type="password" class="form-control mb-2">
+                    <button class="btn btn-outline-info">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var reg_form = document.querySelector("#reg")
+        var log_form = document.querySelector("#login")
+        function demo49_1()
+        {
+            reg_form.style.display = "block"
+            log_form.style.display = "none"
+        }
+        function demo49_2()
+        {
+            log_form.style.display = "block"
+            reg_form.style.display = "none"
+        }
+    </script>
+    
+</body>
+</html>
