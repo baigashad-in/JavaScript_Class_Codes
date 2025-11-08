@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Enquiry Form using JS and Bootstrap </title>
+
+    <link rel="stylesheet" href="Bootstrap_files/CSS/bootstrap.css">
+    <style>
+        #enq
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="button" class="btn btn-outline-info" onclick="demo48()" value="SHOW">
+        <div class="row">
+            <div class="col-sm-6 mx-auto p-5 shadow-lg" id="enq">
+                <p class="text-center fs-3">Enquiry Form</p>
+                Name <input type="text" class="form-control mb-2">
+                Email <input type="text" class="form-control mb-2">
+                Mobile <input type="text" class="form-control mb-2">
+                Your Message <textarea class="form-control mb-2"></textarea>
+                <button class="btn btn-outline-info">SAVE</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function demo48() 
+        {
+            var btn = document.querySelector(".btn")
+            var dv = document.querySelector("#enq")    
+            if (btn.value == "SHOW") 
+            {
+                btn.value = "HIDE"
+                dv.style.display = "block"    
+            }
+            else
+            {
+                btn.value = "SHOW"
+                dv.style.display = "none"
+            }
+        }
+    </script>
+    
+    <!-- <script src="Bootstrap_files/JS/bootstrap.bundle.js"></script> -->
+</body>
+</html>
