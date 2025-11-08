@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="size" onchange="size_change()">
+        <option value="">Font-size</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="35">35</option>
+        <option value="40">40</option>
+        <option value="45">45</option>
+    </select>
+    <select name="" id="family" onchange="family_change()">
+        <option value="">Font-Family</option>
+        <option value="Serif">Serif</option>
+        <option value="Sans-serif">Sans-serif</option>
+        <option value="Monospace">Monospace</option>
+        <option value="Cursive">Cursive</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Courier New">Courier New</option>
+    </select>
+    <select name="" id="color" onchange="color_change()">
+        <option value="">Color</option>
+        <option value="Red">Red</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+        <option value="Black">Black</option>
+        <option value="Pink">Pink</option>
+    </select>
+    <br><br>
+    <textarea name="" id="txt" rows="15" cols="50" ></textarea>
+    <br><br>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <br><br>
+    
+    <button onclick="literals_details()"> Click Me </button>
+
+    <script>
+        document.getElementById("txt").style.resize = "none"
+
+        var txt1 = document.getElementById("txt")
+
+        var size1 = document.getElementById("size")
+        function size_change() 
+        {
+            txt1.style.fontSize = size1.value + "px"
+        }
+
+        var family1 = document.getElementById("family")
+        function family_change() 
+        {
+            txt1.style.fontFamily = family1.value
+        }
+        
+        var color1 = document.getElementById("color");
+        function color_change() 
+        {
+                txt1.style.color = color1.value
+        }
+
+        function literals_details()
+        {
+            var p1 = document.querySelector("#p1")
+            var p2 = document.querySelector("#p2")
+            var input_x = document.getElementById("txt")
+            var x = input_x.value
+            var countSpace = 0
+            var char_count = 0
+            var line_count = 0
+            for(var y of x)
+            {
+                if(y == " ")
+                {
+                    countSpace = countSpace + 1
+                }
+            }
+            var arr = []
+            var counter2 = 0
+            for(var z in x)
+            {
+                if(x[z]==" " || x[z] == "\n")
+                {
+                    counter2 = counter2 + 1
+                    arr[counter2-1] = parseInt(z)
+                }
+            }
+            for(var y=0; y<arr.length; y++)
+            {
+                if((arr[y+1]-arr[y]) == 1)
+                {
+                    countSpace = countSpace - 1
+                }
+            }
+            if(parseInt(arr[(arr.length)-1]) == ((x.length)-1))
+            {
+                countSpace = countSpace -1
+            }
+            if(arr[0] == 0)
+            {
+                countSpace = countSpace - 1
+            }
+
+            // // Word count (manual)
+
+            // var text = document.getElementById("txt").value;
+            // var inWord = false;
+            // var wordCount = 0;
+            // for (var i = 0; i < text.length; i++) {
+            //     var ch = text[i];
+            //     if (ch !== ' ' && ch !== '\n' && ch !== '\t' && ch !== '\r') {
+            //         if (!inWord) {
+            //             wordCount++;
+            //             inWord = true;
+            //         }
+            //     } else {
+            //         inWord = false;
+            //     }
+            // }
+            
+
+            for(var chara in x)
+            {
+                if (x[chara] != " " && x[chara] != 0) 
+                {
+                    char_count = char_count + 1
+                }
+            }
+            for(var line_x in x)
+            {
+                if (x[line_x] === '\n') 
+                {
+                    line_count = line_count + 1
+                }
+            }
+
+            p1.innerHTML = `Number of words = ${countSpace + 1} `
+            // p1.innerHTML = `Number of words = ${wordCount} `
+            p2.innerHTML = `Number of Characters = ${char_count}`
+            p3.innerHTML = `Number of Lines = ${line_count+1} `
+        }
+
+    </script>
+
+
+</body>
+</html>
