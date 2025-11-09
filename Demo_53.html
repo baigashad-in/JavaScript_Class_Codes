@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent
+        {
+            height: 700px;
+            width: 800px;
+            /* border: 2px solid black; */
+            margin: 100px auto;
+        }
+        #main
+        {
+            height: 400px;
+            width: 800px;
+            border: 2px solid crimson;
+        }
+        #bottom
+        {
+            height: 300px;
+            width: 800px;
+            border: 2px solid crimson;
+        }
+        .mainImg
+        {
+            height: 100%;
+            width: 100%;
+            background-size: 100% 100%;
+        }
+        .childImg
+        {
+            height: 250px;
+            width: 210px;
+            margin-top: 20px;
+            margin-left: 35px;
+            background-size: 100% 100%;
+            border: 2px solid crimson;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="main"> 
+            <!-- <img class="mainImg" src="Images/KoS_Flag.png" id="mainImgRef" alt=""> -->
+            <video class="mainImg" src="" id="mainImgRef" onmouseover="changeImg(this)" controls  muted></video>
+        </div>
+        <div id="bottom"> 
+            <!-- <img class="childImg" onmouseover="changeImg(this)" src="Images/coding2.jpg" alt="" >
+            <img class="childImg" onmouseover="changeImg(this)" src="Images/Snow_mountain2.png" alt="" >
+            <img class="childImg" onmouseover="changeImg(this)" src="Images/coding4.jpg" alt="" > -->
+            <video src="Videos/KungFuPanda3.mp4" class="childImg" onmouseover="changeImg(this)" controls muted></video>
+            <video src="Videos/KungFuPanda4.mp4" class="childImg" onmouseover="changeImg(this)" controls muted></video>
+        </div>
+    </div>
+
+    <script>
+        function changeImg(smallImgObj) 
+        {
+            var mainImgObj = document.getElementById("mainImgRef")
+            mainImgObj.src = smallImgObj.src
+            mainImgObj.autoplay = true
+        }
+    </script>
+    
+</body>
+</html>
