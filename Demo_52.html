@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="inputBox" placeholder="Enter a text here">
+    <p id="p_tag1"></p>
+    <button onclick="bindValue()" id="btn">Click Me</button>
+    <script>
+        // alert("Hello there")
+        // var x = prompt("Provide an input")
+        // document.write(x)
+        // console.log(x)
+        // console.error(x)
+        // // console.warn(x)
+        // console.info(x)
+
+        function bindValue() 
+        {
+            var inputObj = document.getElementById("inputBox")
+            var pTagObj = document.querySelector("#p_tag1")
+            // var btnObj = document.getElementById("btn")
+            // pTagObj.innerText = inputObj.value
+            // pTagObj.innerText = inputObj.value + " " + inputObj.placeholder
+            // console.log(inputObj, pTagObj)
+            // inputObj.style.background = "lightblue"
+            // inputObj.style.border = "2px solid coral"
+            // btnObj.style.background = "slategrey"
+            // btnObj.style.border = "4px solid lightblue"
+
+            // if (inputObj.type === "text") 
+            // {
+            //     inputObj.type = "password"  
+            // }
+            // else
+            // {
+            //     inputObj.type = "text"  
+            // }
+
+            if (inputObj.value.length == 6) 
+            {
+                inputObj.style.border = "4px solid green"
+                pTagObj.innerText = "Correct Pincode length"
+                pTagObj.style.color = "green"
+            }
+            else
+            {
+                inputObj.style.border = "4px solid red"
+                pTagObj.innerText = "Pincode should be of 6 digits"
+                pTagObj.style.color = "red"
+            }
+
+
+        }
+        
+    </script>
+</body>
+</html>
