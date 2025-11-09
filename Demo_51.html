@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap_files/CSS/bootstrap.css">
+    <link rel="stylesheet" href="Bootstrap_files/CSS/all.css">
+    <style>
+        table, tr, td
+        {
+            border:2px solid black;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Click Here
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Details Form</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="name1" placeholder="Name">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="state1" placeholder="State">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="city1" placeholder="City">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="college1" placeholder="College">
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email1" placeholder="Email address">
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="display_data()" data-bs-dismiss="modal">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <br><br><br><br>
+
+    <div id="display_div">
+        <p>Name : <font id="name2"> </font></p>
+        <p>State : <font id="state2"> </font></p>
+        <p>City : <font id="city2"> </font></p>
+        <p>College : <font id="college2"> </font></p>
+        <p>Email : <font id="email2"> </font></p>
+        <!-- <table >
+            <tr>
+                <td>Name : </td>
+                <td><font id="name2"> </font></td>
+            </tr>
+            <tr>
+                <td>State : </td>
+                <td><font id="state2"></font></td>
+            </tr>
+            <tr>
+                <td>City : </td>
+                <td><font id="city2"></font></td>
+            </tr>
+            <tr>
+                <td>College : </td>
+                <td><font id="college2"></font></td>
+            </tr>
+            <tr>
+                <td>Email : </td>
+                <td><font id="email2"></font></td>
+            </tr>
+        </table> -->
+    </div>
+    <script>
+        var x = document.querySelector("#display_div")
+        x.style.display = "none"
+        function display_data() 
+        {
+            x.style.display = "block"
+            document.querySelector("#name2").innerHTML = document.getElementById("name1").value
+            document.querySelector("#state2").innerHTML = document.getElementById("state1").value
+            document.querySelector("#city2").innerHTML = document.getElementById("city1").value
+            document.querySelector("#college2").innerHTML = document.getElementById("college1").value
+            document.querySelector("#email2").innerHTML = document.getElementById("email1").value
+        }
+    </script>
+    <script src="Bootstrap_files/JS/bootstrap.bundle.js"></script>
+</body>
+</html>
