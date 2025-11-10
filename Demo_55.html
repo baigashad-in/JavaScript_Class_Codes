@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td 
+        {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    Name <input type="text" id="inputName"> <br><br>
+    Email <input type="email" id="inputEmail"> <br><br>
+    Password <input type="password" id="inputPassword"><br><br>
+    <button id="btn1" onclick="printOutput()">Submit</button> <br><br>
+    Delete Data <input type="text" id="deleteData" placeholder="">
+    <button id="btn2" onclick="deleteData()">Delete</button>
+    <p id="pTag"></p>
+    <!-- <p> -->
+        <table >
+            <th>
+                <tr>
+                    <td>Name</td> <td>Email</td> <td>Password</td>
+                </tr>
+            </th>
+            <tbody id="tableTag">
+
+            </tbody>
+            <!-- <span id="tableTag"></span> -->
+            <!-- <tr id="tableTag"></tr> -->
+        </table>
+        <!-- <table id="tableTag"></table> -->
+    <!-- </p> -->
+    
+
+    <script>
+        var nameObj = document.getElementById("inputName")
+        var emailObj = document.getElementById("inputEmail")
+        var passwordObj = document.getElementById("inputPassword")
+        var pTagObj = document.querySelector("#pTag")
+        var res = ""
+        let dataArr = []
+
+        function printOutput() {
+            pTagObj.innerHTML = `Name : ${nameObj.value} <br>
+            Email : ${emailObj.value} <br>
+            Password : ${passwordObj.value}`
+
+            detailsObjDataTypes = {
+                Name : nameObj.value,
+                Email : emailObj.value,
+                Password : passwordObj.value   
+            }
+
+            dataArr.push(detailsObjDataTypes)
+
+            res = res + "<tr>" + "<td>" + detailsObjDataTypes.Name + "</td>" + "<td>" + detailsObjDataTypes.Email + "</td>" + "<td>" + detailsObjDataTypes.Password + "</td> "+ "</tr>"
+            // res = "<tr>" + "<td>" + nameObj.value + "</td>" + "<td>" + emailObj.value + "</td>" + "<td>" + passwordObj.value + "</td> "+ "</tr>"
+
+            document.querySelector("#tableTag").innerHTML = res
+            // document.querySelector("#tableTag").insertAdjacentHTML("beforeend", res)
+
+            console.log(dataArr);
+        }
+
+        function deleteData() {
+            
+        }
+    </script>
+
+</body>
+
+</html>
