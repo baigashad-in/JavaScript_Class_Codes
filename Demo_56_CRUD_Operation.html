@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap_files/CSS/bootstrap.css">
+    <link rel="stylesheet" href="Bootstrap_files/CSS/all.css">
+</head>
+
+<body onload="tableLoad()">
+
+    <div class="mb-3" class="container">
+        <div class="row">
+            <div class="col-sm-4 shadow-lg mx-auto mt-3">
+                <form action="">
+                    <div>
+                        <h4 class="text-danger text-center mt-2">Registration<span class="text-dark">Form</span></h4>
+                    </div>
+                    <label class="form-label">Name</label>
+                    <input id="inputName" type="text" class="form-control">
+
+                    <label class="form-label">Email address</label>
+                    <input id="inputEmail" type="email" class="form-control">
+
+                    <label class="form-label">Mobile Number</label>
+                    <input id="inputPhone" type="number" class="form-control">
+
+                    <label class="form-label">College</label>
+                    <input id="inputCollege" type="text" class="form-control">
+                    <br>
+                    <div class="d-grid col-8 mx-auto">
+                        <button id="btn1" onclick="addUser()" type="button" class="btn btn-primary mb-3" >Submit</button>
+                        <button id="btn2" onclick="updateData()" type="button" class="btn btn-success mb-3" >Update</button>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="col-sm-2 mx-auto mt-5 shadow-lg" style="height: 150px;">
+                <label class="form-label"><h5>Filter</h5></label>
+                <input id="inputFilter" type="text" class="form-control" placeholder="Enter Name...">
+                <br>
+                <div class="text-end">
+                    <button id="btn3" onclick="filterData()" type="button" class="btn btn-warning text-white mb-3 ">Filter</button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9 mx-auto shadow-lg mt-2">
+                <table class="table">
+                    <thead class="table-danger">
+                        <tr>
+                            <th>Sr No.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>College</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyTag">
+                        <tr>
+                            <th>1</th>
+                            <td>Mark</td>
+                            <td>@mdo</td>
+                            <td>987654321</td>
+                            <td>GITM</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        let usersArr = [{
+            Name: "max",
+            Email: "max@gmail.com",
+            Phone: "987654321",
+            College: "maxtech"
+        }]
+
+        var updateObj = document.getElementById("btn2")
+        updateObj.style.display = "none"
+
+        // let staticData = 
+
+        function addUser() {
+            let nameVal = document.getElementById("inputName").value
+            let emailVal = document.getElementById("inputEmail").value
+            let phoneVal = document.getElementById("inputPhone").value
+            let collegeVal = document.getElementById("inputCollege").value
+
+            // console.log(nameVal, emailVal, phoneVal, collegeVal)
+
+            const data = {
+                Name: nameVal,
+                Email: emailVal,
+                Phone: phoneVal,
+                College: collegeVal
+            }
+
+            usersArr.push(data)
+
+            // console.log(usersArr);
+
+            tableLoad() // breaking this function into two parts
+            // console.log(rows);
+
+        }
+
+        function tableLoad() {
+            var rows = ""
+
+            usersArr.forEach((item, index, array) => {
+                rows = rows + `<tr> <th>${index + 1}</th> <td>${item.Name}</td> <td>${item.Email}</td> <td>${item.Phone}</td> <td>${item.College}</td> <td><button id="btn" onclick="delData(${index})" type="button" class="btn btn-danger mb-3 text-white"> Delete </button> <button id="btn" onclick="editData(${index})" type="button" class="btn btn-warning mb-3 text-white"> Edit </button></td> </tr>`
+            })
+            document.getElementById("tblBodyTag").innerHTML = rows
+
+        }
+
+        function delData(index_received_1) {
+            // alert(index_received_1)
+            usersArr.splice(index_received_1, 1)
+            // console.log(usersArr);
+            tableLoad()
+
+        }
+
+        function editData(index_received_2) {
+            var submitObj = document.getElementById("btn1")
+            submitObj.style.display = "none"
+            updateObj.style.display = "block"
+            window.indexVar = index_received_2 
+
+            let user = usersArr[index_received_2];  // get the selected user's data
+
+            document.getElementById("inputName").value = user.Name;
+            document.getElementById("inputEmail").value = user.Email;
+            document.getElementById("inputPhone").value = user.Phone;
+            document.getElementById("inputCollege").value = user.College;
+        }
+
+        function updateData(indexVar) {
+            let updateNameVal = document.getElementById("inputName").value
+            let updateEmailVal = document.getElementById("inputEmail").value
+            let updatePhoneVal = document.getElementById("inputPhone").value
+            let updateCollegeVal = document.getElementById("inputCollege").value
+
+            const updatedData = {
+                Name: updateNameVal,
+                Email: updateEmailVal,
+                Phone: updatePhoneVal,
+                College: updateCollegeVal
+            }
+
+            usersArr[window.indexVar] = updatedData;  
+
+            document.getElementById("btn1").style.display = "block"
+            updateObj.style.display = "none"
+            tableLoad()
+
+        }
+
+        function filterData() {
+
+            var filterVal = document.getElementById("inputFilter").value
+            let filterOutput = usersArr.filter((element, index, array) => {
+                return element.Name == filterVal
+
+            })
+            // console.log(filterOutput)
+
+            // usersArr = filterOutput
+            // tableLoad()
+
+            let rows =""
+            filterOutput.forEach((item, index, array) => {
+                rows = rows + `<tr> <th>${index + 1}</th> <td>${item.Name}</td> <td>${item.Email}</td> <td>${item.Phone}</td> <td>${item.College}</td> <td><button id="btn" onclick="delData()" type="button" class="btn btn-danger mb-3 text-white"> Delete </button> <button id="btn" onclick="filterData()" type="button" class="btn btn-warning mb-3 text-white"> Edit </button></td> </tr>`
+            })
+            document.getElementById("tblBodyTag").innerHTML = rows
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
