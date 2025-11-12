@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random OTP generation and Hexadecimal Color generation </title>
+    <link rel="stylesheet" href="Bootstrap_files/CSS/bootstrap.css">
+</head>
+<body>
+    <button onclick="tableGeneration()">Click to Generate color</button>
+    <table id="tableTag">
+        <tbody id="tableBodyTag">
+            <tr class="tableRowTag">
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+            </tr>
+            <!-- <tr>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+            </tr>
+            <tr>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+                <td class="tableColumn"></td>
+            </tr> -->
+            
+        </tbody>
+
+    </table>
+    <script>
+        /* function generateOTP() 
+        {
+            let otp="#"
+            for(let i=0; i<=5; i++)
+            {
+                otp = otp + Math.floor(Math.random()*10)
+            }
+            // document.querySelector("").innerHTML = otp
+            console.log(otp);
+            
+            return otp
+        }
+
+         let res = ""
+
+        function tableGeneration() 
+        {
+
+            res = res + `<tr> 
+                    <td style ="background-color:${generateOTP()}; font-size: 20px; padding:5px; margin: 3px; border:2px solid ${generateOTP()}">This</td> 
+                    <td style ="background-color:${generateOTP()}; font-size: 20px; padding:5px; margin: 3px; border:2px solid ${generateOTP()}">is</td> 
+                    <td style ="background-color:${generateOTP()}; font-size: 20px; padding:5px; margin: 3px; border:2px solid ${generateOTP()}">random</td> 
+                    <td style ="background-color:${generateOTP()}; font-size: 20px; padding:5px; margin: 3px; border:2px solid ${generateOTP()}">color</td> 
+                    <td style ="background-color:${generateOTP()}; font-size: 20px; padding:5px; margin: 3px; border:2px solid ${generateOTP()}">generation</td> 
+                    </tr>`
+            
+            document.getElementById("tableTag").innerHTML = res
+            document.getElementById("tableTag").style.color = "white"
+        }
+ */
+
+        function colorGenerationLikeOTP() 
+        {
+            let otp="#"
+            let randomIndex = 0
+            for(let i=0; i<=5; i++)
+            {
+                const Arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"]
+                randomIndex = Math.floor(Math.random() * Arr.length); // generates index from 0 to 15 i.e. 0.01 * 16 = 0.16, 0.9999 * 16 = 15.9984 
+                const otpDigits = Arr[randomIndex]
+                otp = otp + otpDigits // string + number = string
+            }
+            // document.querySelector("").innerHTML = otp
+            // console.log(otp, randomIndex);
+            
+            return otp
+        }
+
+        let tableRowObj = document.querySelector(".tableRowTag")
+        // console.log(tableRowObj);
+            
+        let res = ""
+        for(let i=0; i<=9; i++)
+        {
+            res = res + `${tableRowObj.outerHTML}`
+            tableGeneration() 
+        }
+        document.getElementById("tableBodyTag").innerHTML = res
+
+        function tableGeneration() 
+        {
+            
+            document.getElementById("tableTag").style.color = "white"
+            document.getElementById("tableTag").style.width = "1000px"
+            document.getElementById("tableTag").style.textAlign = "center"
+
+            let tableArr = document.querySelectorAll(".tableColumn")
+            tableArr.forEach(element => {
+                let randomColor = colorGenerationLikeOTP()
+                element.innerHTML = randomColor
+                element.style.backgroundColor = randomColor
+                element.style.border = `2px solid ${colorGenerationLikeOTP()}`
+                element.style.padding = "5px"
+                
+            })
+
+        }
+    setInterval(tableGeneration,1000)
+
+    </script>
+<script src = "Bootstrap_files/JS/bootstrap.bundle.js"></script>
+
+</body>
+</html>
