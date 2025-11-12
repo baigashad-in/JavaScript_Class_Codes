@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outerBox">
+        Enter Name :
+        <input type="text" id="inputTag1">
+        <br><br>
+        <button id="btn" onclick="nameAbbreviation()">Click Here</button>
+        <br><br>
+
+        <div id="innerCircle"></div>
+        
+        <br><br>
+        <input type="text" placeholder="Enter the number of divs you want" id="inputTag2"><br><br>
+        <button onclick="divAmount()">Click to create multiple Circles</button>
+        <br><br>
+
+        <div id="forMultipleCircles">  </div>
+
+
+    </div>
+    <script>
+        // var inputNameVal = document.getElementById("inputTag1").value
+        var innerDivObj = document.querySelector("#innerCircle")
+        innerDivObj.style.height = "100px"
+        innerDivObj.style.width = "100px"
+        innerDivObj.style.borderRadius = "50%"
+        innerDivObj.style.background = "black"
+        innerDivObj.style.color = "orange"
+        innerDivObj.style.fontSize = "55px"
+        innerDivObj.style.lineHeight = "100px"
+        innerDivObj.style.textAlign = "center"
+
+        function nameAbbreviation() 
+        {
+            var inputNameVal = document.getElementById("inputTag1").value
+            // console.log(inputNameVal)
+            var nameArr = inputNameVal.split(" ")
+            var firstName = nameArr[0]
+            
+
+            var firstInitial = firstName[0].toUpperCase()
+            var secondInitial = firstName[1].toUpperCase()
+            // console.log(firstName, lastName, firstInitial, lastInitial ,secondInitial)
+
+            if (nameArr.length == 2 ) 
+                {
+                    var lastName = nameArr[1]
+                    var lastInitial = lastName[0].toUpperCase()
+                    innerDivObj.innerHTML = firstInitial + lastInitial
+                } 
+            else 
+                {
+                    innerDivObj.innerHTML = firstInitial + secondInitial
+                }
+        }
+
+        function divAmount()
+        {
+            document.getElementById("inputTag2").style.width = "300px"
+            var divCount = parseInt(document.getElementById("inputTag2").value)
+            let res1 = ""
+            let res2 = []
+            // console.log(divCount);
+           
+            for(let j=0; j<=3;j++)
+                {
+                    res1 = res1 + `<div class="Circles"></div> `
+                }
+                // console.log(res1);
+            for(let i=0; i<=(divCount/4)-1; i++)
+                {
+                    console.log(i)
+                    res2 = res2 + `<div class="CirclesOuterDiv"></div> `
+                    // console.log(res2);
+                    // console.log(typeof(res2))
+                }
+
+            document.querySelector("#forMultipleCircles").innerHTML=res2
+            let res2Arr = document.querySelectorAll(".CirclesOuterDiv")
+            console.log(res2Arr);
+                
+            res2Arr.forEach((items)=>{
+                items.innerHTML = res1
+                items.style.height = "100px"
+                items.style.width = "100%"
+                items.style.margin = "5px"
+                // items.style.background = "crimson"
+                // console.log(items)
+            })
+            // console.log(document.querySelectorAll(".CirclesOuterDiv"))
+
+            var nameArr = []
+
+            if (res1) {
+                var multiCircleObj = document.querySelectorAll(".Circles")
+
+                multiCircleObj.forEach((elements,index)=>{
+                    elements.style.height = "100px"
+                    elements.style.width = "100px"
+                    elements.style.borderRadius = "50%"
+                    elements.style.background = "lightblue"
+                    elements.style.color = "crimson"
+                    elements.style.fontSize = "55px"
+                    elements.style.marginLeft = "10px"
+                    elements.style.lineHeight = "100px"
+                    elements.style.textAlign = "center"
+                    elements.style.float = "left"
+                    // elements.style.innerHTML = 
+                })       
+            }
+        }
+        
+    </script>
+</body>
+</html>
