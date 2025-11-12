@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputTag">
+    <br><br>
+    <p></p>
+    <br><br>
+    <button onclick="generateUserName()">Click</button>
+
+    <script>
+        function generateUserName() 
+        {
+            var inputVal = document.getElementById("inputTag").value
+            let todayFullDate = new Date()
+            let todayDate = todayFullDate.getDate()
+            let todayMonth = todayFullDate.getMonth() +1
+            // let todayMonth = 10
+            let todayYear = todayFullDate.getFullYear()
+            console.log(todayDate, todayMonth, todayYear)
+
+            console.log(inputVal, typeof(inputVal))
+
+            let Flag = true
+            for(let i=0; i<=inputVal.length-1; i++)
+            {
+                if((inputVal.charCodeAt(i) >= 65 && inputVal.charCodeAt(i) <= 90 )|| (inputVal.charCodeAt(i) >= 97 && inputVal.charCodeAt(i) <= 122 ))
+                {
+                    Flag = true
+                }
+                else
+                {
+                    Flag = false
+                    break
+                }
+            }
+            console.log(Flag)
+
+            if (Flag == false) 
+            {
+                document.querySelector("p").innerText = "Error !! Kindly enter an Alphabetize Name only"
+            }
+            else
+            {
+                if(inputVal.length > 5)
+                {
+                    var trimmedName = inputVal.slice(0,5)
+                    if (todayMonth < 10) {
+                        todayMonth = "0" + todayMonth
+                    }
+                    document.querySelector("p").innerText = trimmedName + "st" + todayDate + todayMonth + todayYear
+                }
+                else
+                {   
+                    if (todayMonth < 10) {
+                        todayMonth = "0" + todayMonth
+                    }
+                    document.querySelector("p").innerText = inputVal + "st" + todayDate + todayMonth + todayYear
+                }
+            }
+        }
+    </script>
+</body>
+</html>
