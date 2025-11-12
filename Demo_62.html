@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- filename, extension, folder name,  Basepath -->
+</head>
+<body>
+    <input type="file" id="fileInput" onchange="loadFile(this)">
+    <p id="pTag1"></p>
+    <!-- <p id="pTag2"></p>
+    <p id="pTag3"></p> -->
+
+    <script>
+
+        function loadFile(x) {
+            // const uploadedFile = document.getElementById("fileInput");
+            // var file = uploadedFile.files[0];
+            // console.log(file);
+            
+            // if (file) {
+            // let res1 = `${document.getElementById('pTag1').innerHTML = `File name: ${file.name}`}`
+            // let res2 = `${document.getElementById('pTag2').innerHTML = `Path: ${file.webkitRelativePath}`}`
+            // let res3 = `${document.getElementById('pTag3').innerHTML = `Extension: ${file.type}`}` 
+            // }
+
+
+
+            var fileVal = x.value
+            
+            let tempPath = fileVal.split("\\")
+            let finalPath = tempPath[0] + "\\" + tempPath[1]
+            let tempName = tempPath[2].split(".")
+            let fileName = tempName[0]
+            let fileExtension = tempName[1]
+            
+            if (fileVal) {
+            // let res1 = `${document.getElementById('pTag1').innerHTML = ${`File name: ${fileName}`} \n ${ `Path: ${finalPath}`} \n ${`Extension: ${fileExtension}`}}`
+            
+            document.getElementById("pTag1").innerText = `File name: ${fileName} \n Path: ${finalPath} \n  Extension: ${fileExtension}` // for new line innerText works not innerHTML.
+
+            // let res2 = `${document.getElementById('pTag2').innerHTML = `Path: ${finalPath}`}`
+            // let res3 = `${document.getElementById('pTag3').innerHTML = `Extension: ${fileExtension}`}`
+            
+            console.log(fileVal)
+            }
+            
+        }
+
+
+    </script>
+    
+</body>
+</html>
