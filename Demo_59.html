@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: black;
+            
+        }
+        #outerBox
+        {
+            height: 300px;
+            width: 1197px;
+            font-size: 212px;
+            border: 10px solid crimson;
+            border-radius: 40px;
+            box-shadow: 0px 0px 10px 10px lightyellow ;
+            line-height: 300px;
+            text-align: center;
+            color: crimson;
+            font-family: Digital-7;
+            margin: 200px auto;
+
+        }
+
+    </style>
+</head>
+<body onload="clock()">
+    <div id="outerBox">
+        07:58:45 AM
+    </div>
+
+    <script>
+        function clock() 
+        {
+            const boxObj = document.querySelector("#outerBox")
+            const dateToday = new Date()
+            const formattedTime = dateToday.toLocaleTimeString()
+            boxObj.innerHTML = formattedTime
+        }
+        setInterval(clock, 1000)
+    </script>
+</body>
+</html>
