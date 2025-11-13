@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div
+        {
+            height: 600px;
+            width: 90%;
+            margin: auto;
+            box-sizing: border-box;
+        }
+        img
+        {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            
+        }
+        button
+        {
+            /* margin-left: 50%; */
+            margin-left: 300px;
+            border-radius: 25px;
+            height: 50px;
+            width: 150px;
+            padding: 5px;
+            font-size: 25px;
+            background-color: rgb(250, 210, 210);
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="img" src="Images/star_mountains.png" alt="">
+        <button onclick="backFunction()">Back</button>
+        <button onclick="nextFunction()">Next</button>
+    </div>
+    <!-- <img src="Images/Mountains.png" alt="">
+    <img src="Images/Sand_dunes.png" alt="">
+    <img src="Images/tuscuny.png" alt="">
+    <img src="Images/Snow_mountain2.png" alt=""> -->
+
+    <script>
+        var imgObj =  document.querySelector("#img")
+        const imgArr = ["Images/star_mountains.png", "Images/Mountains.png", "Images/Sand_dunes.png", "Images/tuscuny.png",  "Images/Snow_mountain2.png" ]
+
+        let i = 0
+        function slider() 
+        {
+            imgObj.src = imgArr[i]
+            i++
+            if (i == imgArr.length) {
+                i = 0
+            }
+        }
+        // setInterval(slider, 2000)
+
+        function backFunction() {
+            i = i-1
+            if (i<0) {
+                i = imgArr.length-1
+            }
+            imgObj.src = imgArr[i]
+        }
+
+        function nextFunction() {
+            i = i +1
+            if (i == imgArr.length) {
+                i = 0
+            }
+            imgObj.src = imgArr[i]
+        }
+
+
+    </script>
+</body>
+</html>
