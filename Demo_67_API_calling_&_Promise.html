@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap_files/CSS/bootstrap.css">
+</head>
+<body onload="getProducts()">
+    <br>
+    <input type="text" placeholder="Search" onkeyup="filterBrand()" id="inputFilter">
+    <!-- <button onclick="filterBrand()">Search</button> -->
+    <br><br>
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>Sr.</th>
+                <th>Title</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody class="table-warning">
+            
+        </tbody>
+    </table>
+    <script>
+        const getProducts = async () => {
+            let productsArr = []
+            const url = `https://dummyjson.com/products`
+            const response1 = await fetch(url)
+            const data = await response1.json()
+            productsArr = data.products // "products" is the key name of "data" object
+            // console.log("Old output = ", productsArr)
+            let rows = ""
+            productsArr.forEach((element,index) => {
+                rows = rows + `<tr><td>${element.id}</td><td>${element.title.split(" ")[0]}</td><td>${element.brand}</td><td>${element.category}</td><td><img height = "80px" width = "80px" src="${element.images[0]}"></td></tr>`
+            });
+            document.querySelector("tbody").innerHTML = rows
+            // var newProductsArr = productsArr
+            // console.log("newProductArr = ", newProductsArr);
+            
+            // return newProductsArr
+            return productsArr
+        }
+        getProducts()
+        // console.log("Output = ",getProducts());
+
+        // async function filterBrand()
+        const filterBrand = async () => {
+
+            var arrForFiltering = await getProducts()
+            console.log("New Array = ",arrForFiltering)
+
+            var filterVal = document.getElementById("inputFilter").value.toLowerCase()
+            var filterOutput = arrForFiltering.filter((element, index, array) => {
+                // var tempVal = element.brand
+                if (element.brand != undefined) 
+                    {
+                        return element.brand.toLowerCase().includes(filterVal) // returns true or false
+                        // for(i=0; i<=filterVal.length; i++ )
+                        // if(element.brand.includes(filterVal))
+                            // {
+                            //     return element.brand.slice(0,filterVal.length) === filterVal
+                            // }
+                    }
+                // else
+                // {
+                //     return element.brand == filterVal
+                // }
+            })
+
+            let res =""
+            filterOutput.forEach((item, index, array) => {
+                res = res + `<tr> <th>${item.id}</th> <td>${item.title.split(" ")[0]}</td> <td>${item.brand}</td> <td>${item.category}</td> <td><img height = "80px" width = "80px" src="${item.images[0]}"></td> </tr>`
+            })
+            document.querySelector("tbody").innerHTML = res
+        }
+
+        // if (document.getElementById("inputFilter").value == null) 
+        // {
+        //     getProducts()
+        // }
+
+    </script>
+</body>
+</html>
