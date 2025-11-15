@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* const student = {
+            name : "test",
+            branch : "cse",
+            enroll : {
+                package : "trip",
+            },
+            college : "GCRG"
+        }
+        // console.log(student.name, student.branch, student.college)
+        
+        const {name, branch, college} = student
+        console.log(name, branch, college);
+
+        const{package} = student.enroll
+ */
+
+
+        /* const facebook = {
+            userName : "username",
+            email : "user@email.com",
+            cityState : "cityName",
+            privateData : {
+                password : "whateverPassword",
+                birthday : {
+                    year : {
+                        month : {
+                            date : {
+                                day : "monday",
+                            },
+                        },
+                    },
+                },
+
+            }
+        }
+        const {userName, email, cityState, privateData} = facebook
+
+        const{day} = facebook.privateData.birthday.year.month.date
+        console.log(day); */
+        
+
+
+
+        /* const studentData = ["saurabh", "cse", "50000"]
+        const studentName = studentData[0]
+        const studentBranch = studentData[1]
+        const studentSalary = studentData[2]
+
+        const[name2, branch2, salary2] = studentData
+        const[name3, , salary3] = studentData
+        console.log(name2,branch2,salary2);
+        console.log(name3,salary3); */
+        
+
+
+
+        /* const studentData = ["saurabh", "cse", "50000", ["hcl", "bde"]]
+        const [name2, , salary2,[company, role]] = studentData
+        // const [name2, branch2 , salary2,[company, role]] = studentData
+        console.log(name2, salary2, company,role); */
+        
+
+
+
+        /* let oldArr = [1,2,3,4,5,6,7]
+        let ekOrArr = ["a", "b", "c", "d", "e", "f"]
+        // const newArr = [...oldArr, 98, 34, 52, -12, -76]
+        // const newArr = [...oldArr, ekOrArr,98, 34, 52, -12, -76]
+        const newArr = [...oldArr, ...ekOrArr,98, 34, 52, -12, -76]
+        console.log(newArr); */
+        
+
+
+        /* let buildingObj = {
+            office1 : "Techpile",
+            office2 : "HCL",
+            office3 : "Google",
+            office3 : "Amazon",
+            office4 : "Meta",
+            office5 : "Netflix"
+        }
+
+        const newOfficeObj = {...buildingObj, office6 : "Microsoft", office7 : "SAP", office8 : "Perplexity"}
+        console.log(newOfficeObj); */
+
+
+        /* // default parameter:
+        const add = (a=2,b=2) =>{
+            console.log(a+b);
+            
+        }
+        add(5) */
+
+        /* // rest parameter:
+        const add = (a,b,...x) =>{
+            console.log(a,b,x);
+            
+        }
+        add(5,12,3,56,74,90,62,85) */
+
+        /* // rest parameter:
+        const add = (...x) =>{
+        const result = x.reduce((sum,item) =>{
+                return sum + item
+            },0)
+            console.log(result);
+            
+        }
+        add(5,12,3,56,74,90,62,85) */
+        
+        
+        /* // rest parameter:
+        const multiplication = (...x) =>{
+        const result = x.reduce((sum,item) =>{
+                return sum * item
+            },1)
+            console.log(result);
+            
+        }
+        multiplication(5,12,3,56,74,90,62,85) */
+        
+        // rest parameter:
+        const multiplication = (...x) =>{
+        const result = x.reduce((sum,item) =>{
+                return sum * item
+                item++
+            },1)
+            console.log(result);
+            
+        }
+        multiplication(5,12,3,56,74,90,62,85)
+
+
+        
+    </script>
+</body>
+</html>
