@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap_files/CSS/bootstrap.css">
+</head>
+<body>
+    <table class="table">
+        <thead class="table-success">
+            <th>Sr.No.</th>
+            <th><input type="text" placeholder="Search" onkeyup="filterColumns(this, 'authors[0].name')"> <br> Authors Name</th>
+            <th><input type="text" placeholder="Search" onkeyup="filterColumns(this, 'title')"> <br> Title</th>
+            <th><input type="text" placeholder="Search" onkeyup="filterColumns(this, 'summary')"> <br> Summary</th>
+            <th>Link</th>
+            <th>Image</th>
+        </thead>
+        <tbody class="table-secondary">
+
+        </tbody>
+    </table>
+    <script>
+        let spaceDataArr = []
+        const getSpaceArticles = async () => {
+            const url = "https://api.spaceflightnewsapi.net/v4/articles?limit=1000"
+            const responseVariable = await fetch(url)
+            let data = await responseVariable.json()
+            spaceDataArr = data.results
+            console.log(spaceDataArr);
+            let rows = ""
+            spaceDataArr.forEach((element, index, array) => {
+                rows = rows + `<tr> <td>${index+1}</td> <td>${element.authors[0].name}</td> <td>${element.title} </td> <td>${element.summary}</td> <td><a href=""> ${element.url}</a></td> <td><img height = "80px" width = "80px"  src = "${element.image_url}" </td></tr>`
+            });
+            document.querySelector("tbody").innerHTML = rows
+            document.querySelector("th").style.width = "100px"
+            return spaceDataArr
+        }
+        getSpaceArticles()
+
+        const filterColumns = async (argFromInput, columnName) => {
+
+            // var arrForFiltering = await getSpaceArticles()
+
+            var filterVal = argFromInput.value.toLowerCase()
+            var filterOutput = spaceDataArr.filter((element, index, array) => {
+                if (element[columnName] != undefined) 
+                    {
+                        return element[columnName].toString().toLowerCase().includes(filterVal) // returns true or false
+                    }
+            })
+
+            let res =""
+            filterOutput.forEach((item, index, array) => {
+                res = res + `<tr> <td>${index+1}</td> <td>${item.authors[0].name}</td> <td>${item.title} </td> <td>${item.summary}</td> <td><a href=""> ${item.url}</a></td> <td><img height = "80px" width = "80px"  src = "${item.image_url}" </td></tr>`
+            })
+            document.querySelector("tbody").innerHTML = res
+        }
+    </script>
+</body>
+</html>
