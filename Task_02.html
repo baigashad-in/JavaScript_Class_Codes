@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea
+        {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    Enter a sentence : 
+    <!-- <input type="text" id="num1" > -->
+     <form action="">
+        <textarea id="num1" rows="10" cols="70"></textarea>
+     </form>
+    <br><br>
+    <p id="p1"></p>
+    <br><br>
+    
+    <button onclick="task32()"> Click Me </button>
+    <script>
+        
+        function task32()
+        {
+            var p1 = document.querySelector("#p1")
+            var input_x = document.getElementById("num1")
+            var x = input_x.value
+
+            var countSpace = 0
+            for(var y of x)
+            {
+                if(y == " ")
+                {
+                    countSpace = countSpace + 1
+                }
+            }
+            var arr = []
+            var counter2 = 0
+            for(var z in x)
+            {
+                if(x[z]==" ")
+                {
+                    counter2 = counter2 + 1
+                    arr[counter2-1] = parseInt(z)
+                }
+            }
+
+            for(var y=0; y<arr.length; y++)
+            {
+                if((arr[y+1]-arr[y]) == 1)
+                {
+                    countSpace = countSpace - 1
+                }
+            }
+
+            if(parseInt(arr[(arr.length)-1]) == ((x.length)-1))
+            {
+                countSpace = countSpace -1
+            }
+
+            if(arr[0] == 0)
+            {
+                countSpace = countSpace - 1
+            }
+
+            p1.innerHTML = `Number of words = ${countSpace + 1}`
+
+        }
+
+        if(x!= null)
+        {
+            task32()
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- <script>
+    var x = "This is   the world.   what esfd"
+
+    var countSpace = 0
+    for(var y of x)
+    {
+        if(y == " ")
+        {
+            countSpace = countSpace + 1
+        }
+    }
+    var arr = []
+    var counter2 = 0
+    for(var z in x)
+    {
+        if(x[z]==" ")
+        {
+            counter2 = counter2 + 1
+            arr[counter2-1] = parseInt(z)
+        }
+    }
+
+    for(var y=0; y<arr.length; y++)
+    {
+        if((arr[y+1]-arr[y]) == 1)
+        {
+            countSpace = countSpace - 1
+        }
+    }
+
+    if(parseInt(arr[(arr.length)-1]) == ((x.length)-1))
+    {
+        countSpace = countSpace -1
+    }
+    if(arr[0] == 0)
+    {
+        countSpace = countSpace -1
+    }
+
+    console.log(x.length)
+    // console.log(x.length - countSpace)
+    console.log(countSpace)
+    console.log(arr)
+
+    console.log(`Number of words = ${countSpace + 1}`)
+</script> -->
