@@ -1,0 +1,76 @@
+1. Write a program that uses getElementById to select a <p> tag and change its text content to "Techpile Technology" on the click of button.
+
+2. Create a button that, when clicked, changes the background color of a <div> with a specific id by using querySelector.
+
+3. Write a program that increases the font size of a paragraph (<p>) with an id to 24px using inline styling.
+
+4. Use getElementById to hide an element (<div>) with a specific id by setting its style.display property to "none".
+
+5. Write a program to show a hidden element (<div>) by changing its style.display property to "block".
+
+6. Write a program that changes the text color of a heading (<h1>) to red when a button is clicked.
+
+7. Write a program that changes the background color, font size, and text color of a paragraph (<p>) when a button is clicked by using querySelector.
+
+8. Create an input box and a button. When the user types a color name (e.g., "blue") and clicks the button, the background color of a <div> changes to that color.
+
+9. Write a program where clicking a button changes its text to "Clicked!".
+
+10. Create a button that toggles the background color of a <div> between white and green each time it is clicked.
+
+11. Create two buttons (+ and -) and a <p> element. Use getElementById to update the paragraph to show a counter value that increases or decreases when the buttons are clicked.
+
+12. Write a program where clicking a button moves a <div> to the right by increasing its style.left value (using position:abosulte).
+
+13. Write a program that reads the value of an input field using .value and displays it in an alert box.
+
+14. Create a button that changes the innerText of a <p> tag to "Hello, World!" when clicked.
+
+15. Write a program to set the value of an input box to "Code Helper" using value property.
+
+16. Write a program to clear the text inside an input field when a button is clicked.
+
+17. Create a button that changes the innerHTML of a <div> to include bold text: <b>This is bold text</b>.
+
+18. Write a program where a user types something in an input box and clicks a button. The text appears inside a <span> element.
+
+19. Create a program with two input fields and a button. When clicked, it displays the sum of the two numbers inside a <p> tag.
+
+20. Write a program that reads the innerHTML of a <div> and displays it in an alert box.
+21. Create a button that replaces the content of a <div> with "Content has been replaced!".
+22. Create two input fields and a button. When clicked, copy the value from the first field to the second.
+23. Write a program that shows the number of characters typed into an input field inside a <span> tag on the click of button.
+24.Create an input box where the user types text, and the innerText of an <h1> tag updates in real time.
+25. Write a program to bind the item of array in ordered list by using for ..in loop.
+Sample Array 
+var arr=["HTML","CSS","JS","REACT JS","ANGULAR JS","JSX"]
+26. Write a program to bind the item of array in ordered list by using for ..in loop.
+Sample Array 
+var arr=["HTML","CSS","JS","REACT JS","ANGULAR JS","JSX"]
+27. Write a program to bind the item of array in dropdownlist by using for loop.
+Sample Array 
+var arr=["HTML","CSS","JS","REACT JS","ANGULAR JS","JSX"]
+
+
+28. Create an input box. When you hover over a button, the input value is displayed inside a <p> tag.
+29. Create a program where clicking a button adds a new <p> element with specific text inside a <div>.
+
+30. Write a program to dynamically add items to an unordered list (<ul>) based on the value entered in an input field.
+
+31. Write a program that removes the content of a <div> when a button is clicked with user confirmation(Use confirm box).
+
+32. Write a program to count the number of words typed into a text area and display the result inside a <p> tag on the click of Button.
+33. Create two textboxes and 4 buttons(+,-,x,/) and calculate the result based on button clicked and print the reult on p tag.
+
+34. Write a program that displays once in an alert box with the message "Techpile Technology!" after 3 seconds using setTimeout.
+35. Write a program that displays in an alert box with the message "Code Helper!" for everyone 3 seconds using setTimeout.
+36. Write a program that displays in an alert box with the message "Techpile Technology!" for everyone 2 seconds using SetInterval.
+Write a program that display "Code Helper!" on paragraph every 2 seconds using setInterval.
+37. Create a button that starts a timer using setTimeout to display "This is delayed!" after 5 seconds. Add another button to cancel the timer before it executes.
+
+38. Write a program to swap 10 images one to another for every 5 second by using setInterval function. Add a button to stop the interval using clearInterval.
+
+39. Write a countdown timer that starts at 10 and counts down to 0. Use setInterval to update the countdown every second.
+
+40. Write a program to show and hide the text of a <h1> tag for every 2 second using setInterval. Add a button to stop the flashing effect.
+
