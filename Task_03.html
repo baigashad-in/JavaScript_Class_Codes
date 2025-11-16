@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "p1"></p>
+    <p id = "p2"></p>
+    <br><br><br>
+    <button onclick="task40()">Start timer</button>
+    <script>
+        var x = document.querySelector("#p2")
+        var y = document.querySelector("#p1")
+        var counter = "11"
+        function task40()
+        {
+            if (counter == 0) 
+            {
+                return    
+            }
+            else
+            {
+                function start_counter() 
+                {
+                    if (counter == 0) 
+                    {
+                        y.innerHTML = "Counter Ends."
+                        return    
+                    }
+                    else
+                    {
+                        counter = parseInt(counter) - 1
+                        x.innerHTML = counter
+                    }
+                }
+                setInterval(start_counter, 1000)
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
