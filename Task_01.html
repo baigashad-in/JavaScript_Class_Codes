@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn
+        {
+            height: 50px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <input id="inpt1"></input>
+    <p id="p1"></p>
+    <br><br><br>
+    <input type="button" value = "Hover mouse here" onmouseover="task28_1()" onmouseleave= "task28_2()" id="btn">
+    <script>
+        
+        function task28_1() 
+        {
+            var x = document.querySelector("#inpt1")
+            var y = document.querySelector("#p1")
+            y.innerHTML = x.value    
+        }
+        function task28_2() 
+        {
+            var y = document.querySelector("#p1")
+            y.innerHTML = null
+        }
+        
+    </script>
+</body>
+</html>
