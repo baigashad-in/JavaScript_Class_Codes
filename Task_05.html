@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pTag1">Hello !! there. Welcome to the World of JavaScript. Studying Javascript makes HTML website interactive and fun.</p>
+    <br>
+    <p id="pTag2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis facere consequuntur ipsam enim aliquam, magnam blanditiis quis, doloremque repellendus ipsa nulla autem nobis neque est? Architecto neque doloribus quo odio.</p>
+
+    <br><br>
+    <button onclick="swap()">Swap</button>
+
+    <script>
+        function swap() 
+        {
+            var pTagObj1 = document.querySelector("#pTag1")
+            var thirdVariable = pTagObj1.innerHTML
+            var pTagObj2 = document.querySelector("#pTag2")
+            pTagObj1.innerHTML = pTagObj2.innerHTML
+            pTagObj2.innerHTML = thirdVariable
+        }
+    </script>
+</body>
+</html>
