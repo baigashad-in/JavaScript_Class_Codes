@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="Images/coding.png" alt="" height="300px" width="300px" id="image_1">
+    <img src="Images/Mountains.png" alt="" height="300px" width="300px" id="image_2">
+    <!-- <video src="Videos/KungFuPanda3.mp4" height="300px" width="300px" id="image_1" controls autoplay muted></video>
+    <video src="Videos/KungFuPanda4.mp4" height="300px" width="300px" id="image_2" controls autoplay muted></video> -->
+    <br><br>
+    <button onclick="swapFunction()">Swap Images</button>
+
+    <script>
+        var imageObj1 = document.getElementById("image_1")
+        var imageObj2 = document.getElementById("image_2")
+        imageObj1.style.marginRight = "100px"
+
+        function swapFunction()
+        {
+            var thirdVariable = imageObj1.src
+
+            imageObj1.src = imageObj2.src
+            imageObj2.src = thirdVariable
+        }
+    </script>
+</body>
+</html>
