@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id = "inputTag"> 
+    <br><br>
+    <span></span>
+    <br><br>
+    <button onclick="countCharacters()"> Click Me </button>
+    <script>
+        var inputTagObj = document.getElementById("inputTag")
+        var spanElementObj = document.querySelector("span")
+        function countCharacters() 
+        {
+            for(var x of inputTagObj.value)
+            {
+                var charCount = 0
+                console.log(inputTagObj.value)
+                if (x != " ") 
+                {
+                    charCount++
+                    spanElementObj.innerHTML = `Number of Characters = ${(charCount)}`
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
