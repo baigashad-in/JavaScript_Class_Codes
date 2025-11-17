@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id = "inputTag1"> + <input type="number" id="inputTag2">
+    <br>
+    <br>
+    <p></p>
+    <br><br><br>
+    <button onclick="Addition()"> Click Me  </button>
+    <script>
+        var inputTagObj1 = document.getElementById("inputTag1")
+        var inputTagObj2 = document.getElementById("inputTag2")
+        var outputObj = document.querySelector("p")
+        function Addition() 
+        {
+            outputObj.innerHTML = parseFloat(inputTagObj1.value) + parseFloat(inputTagObj2.value)
+        }
+    </script>
+    
+</body>
+</html>
