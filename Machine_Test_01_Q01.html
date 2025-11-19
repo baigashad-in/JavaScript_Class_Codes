@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 1. CRUD => Name Email Password profile pic -->
+    <!-- 2. Img Swap -->
+    <!-- 3. Check indian mobile number validation : Show error/Success msg with Red/green -->
+    <!-- 4. Bind the Array list in ul/li tag -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap_files/CSS/bootstrap.css">
+</head>
+<body onload="submitData()">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 mx-auto shadow-lg mt-5">
+                <label class="form-label mt-3">Name</label>
+                <input id="inputName" type="text" class="form-control mb-3" placeholder="Name">
+                <label class="form-label">Email</label>
+                <input id="inputEmail" type="text" class="form-control mb-3" placeholder="Email">
+                <label class="form-label">Password</label>
+                <input id="inputPassword" type="password" class="form-control mb-3" placeholder="Password">
+                <label class="form-label">Image Source Path</label>
+                <input id="inputImage" type="text" class="form-control mb-3" placeholder="Profile Pic Image path">
+                <div class="text-end">
+                    <button id="btnSubmit" class="btn btn-primary mb-3" onclick="addData()">Submit</button>
+                    <button id="btnUpdate" class="btn btn-warning mb-3" onclick="updateData()">Update</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7 mx-auto mt-3 shadow-lg">
+                <table class="table">
+                <thead class="table-dark text-white">
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Profile Pic</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableTag">
+                    
+                </tbody>
+            </table>
+            <input type="hidden" id="editIndexStorage"> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let studentArr = [{
+            Name: "max",
+            Email: "max@gmail.com",
+            Password: "asdfadsf",
+            Image: "Images/web-developer.png"
+        }]
+        
+
+        var updateObj = document.getElementById("btnUpdate")
+        updateObj.style.display = "none"
+
+        function addData() {
+            let inputNameVal = document.getElementById("inputName").value
+            let inputEmailVal = document.getElementById("inputEmail").value
+            let inputPasswordVal = document.getElementById("inputPassword").value
+            let inputImageVal = document.getElementById("inputImage").value
+
+            let studentData = {
+                                Name : inputNameVal,
+                                Email: inputEmailVal,
+                                Password: inputPasswordVal,
+                                Image: inputImageVal
+                            }
+
+            studentArr.push(studentData)
+            submitData()
+        }
+        
+
+
+        function submitData() {
+            var res = ""
+
+            studentArr.forEach((element, index, array) => {
+                res = res + `<tr> 
+                                    <th>${index + 1}</th> 
+                                    <td>${element.Name}</td> 
+                                    <td>${element.Email}</td> 
+                                    <td>${element.Password}</td> 
+                                    <td>
+                                        <img src="${element.Image}" style="width:50px; height:50px; object-fit: cover; border-radius: 5px;">
+                                    </td> 
+                                    <td>
+                                        <button id="btn" onclick="delData(${index})" type="button" class="btn btn-primary mb-3 text-white"> Delete </button> 
+                                        <button id="btn4" type="button" onclick="editData(${index})" class="btn btn-warning ms-2 mb-3 text-white"> Edit </button>
+                                    </td> 
+                                </tr>`
+
+            })
+
+            document.getElementById("tableTag").innerHTML = res
+
+        }
+
+        function delData(index_received) {
+            studentArr.splice(index_received, 1)
+            submitData()
+            
+        }
+
+        function editData(index_received) {
+             let editIndexStorageObj = document.getElementById("editIndexStorage")
+            editIndexStorageObj.value = index_received
+
+            var submitObj = document.getElementById("btnSubmit")
+            submitObj.style.display = "none"
+            updateObj.style.display = "block"
+        }
+
+        function updateData() {
+            let editIndexStorageObj = document.getElementById("editIndexStorage")
+
+            let updateNameVal = document.getElementById("inputName").value
+            let updateEmailVal = document.getElementById("inputEmail").value
+            let updatePasswordVal = document.getElementById("inputPassword").value
+            let updateImageVal = document.getElementById("inputImage").value
+
+            const updatedData = {
+                Name: updateNameVal,
+                Email: updateEmailVal,
+                Password: updatePasswordVal,
+                Image: updateImageVal
+            }
+
+            studentArr[editIndexStorageObj.value] = updatedData
+
+            document.getElementById("btnSubmit").style.display = "block"
+            updateObj.style.display = "none"
+
+            submitData()
+
+        }
+    </script>
+    
+</body>
+</html>
