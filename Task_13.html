@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <img src="Images/Stars.jpg" id="stars" style="height: 300px;">
+    <br><br>
+    <button onclick="styleFunction()">Style</button>
+    <script>
+        function styleFunction() 
+        {
+            var promptObj = confirm("Please Enter okay or cancel buttons.")
+            var starsImageObj = document.getElementById("stars")
+            if(promptObj==true)
+            {
+                starsImageObj.style.border="20px solid coral"
+                starsImageObj.style.boxShadow="-5px -5px 5px 20px lightblue"
+                starsImageObj.style.height="150px"
+            }
+            else
+            {
+                alert("You have selected cancel")
+            }
+        }
+    </script>
+</body>
+</html>
