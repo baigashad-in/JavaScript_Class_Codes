@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><ul id="list"></ul></p>
+    <script>
+        var Arr = [0,1,2,3,4,5,6,7]
+        var pObj = document.getElementById("list")
+
+        var res = ""
+        var bind = Arr.forEach((element,index,array)=>{
+            res = res + `<li>${element} </li>`
+        })
+        pObj.innerHTML = res
+
+    </script>
+</body>
+</html>
