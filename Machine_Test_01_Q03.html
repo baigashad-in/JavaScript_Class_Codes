@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputNumber" type="number" onkeyup="check() ">
+    <br><br>
+    <p></p>
+    <br><br>
+    <button onclick="check()">Check</button>
+
+    <script>
+        var inputObj = document.getElementById("inputNumber")
+        var pTagObj = document.querySelector("p")
+
+        
+        function check() {
+            let phoneNumber = inputObj.value
+            console.log(phoneNumber.length)
+
+            if (phoneNumber.length == 10) {
+
+                pTagObj.innerText = "Correct"
+                pTagObj.style.color = "green"
+                pTagObj.style.fontSize = "25px"
+            }
+            else
+            {
+                pTagObj.innerText = "Error"
+                pTagObj.style.color = "red"
+                pTagObj.style.fontSize = "25px"
+
+            }
+        }
+    </script>
+
+</body>
+</html>
